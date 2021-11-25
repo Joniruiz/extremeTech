@@ -1,0 +1,189 @@
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-login { 
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/fondoLogin.jpg');
+    background-repeat: no-repeat;
+    background-size: cover  ;
+}
+
+.user, .pass {
+    padding: 15px 0;
+}
+
+.inputs { 
+    padding: 5px;
+
+}
+
+.is-invalid {
+    border: solid 2px red;
+}
+
+.btn-style {
+    width: 125px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 18px;
+    background-color: var(--colorSecundary);
+    color: var(--colorPrimary);
+    border-radius: 10px;
+    border: 0;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+
+.btn-style:hover {
+    background-color: var(--colorSecundaryWhite);
+    color: var(--colorWhite);
+}
+
+.btn-google {
+    position: relative;
+    top: 5px;
+}
+
+
+.btn-login {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+
+}
+
+.login-gmail {
+    margin-bottom: 15px;
+}
+
+.login-gmail a {
+    display: flex;
+    background-color: var(--colorPrimaryC);
+    border-radius: 5px;
+    padding: 5px;
+    margin: 0 auto;
+    width: 150px;
+    height: 40px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.login-gmail a:hover{
+    background-color: var(--colorSecundary);
+}
+
+.login-gmail a img {
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin-right: 15px;
+}
+
+.fa-google:before {
+    content: "\f1a0";
+    position: relative;
+    bottom: -5px;
+}
+#remember-password {
+    font-size: 14px;
+}
+.btn-style a {
+    color: var(--colorPrimary);
+    font-weight: bold;
+}
+
+.section2-login {
+    background-color: var(--colorPrimary);
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    opacity: 0.94;
+    margin: 0 15px;
+}
+.section2-login .enter-register {
+    color: var(--colorSecundary);
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.remember-password {
+    font-size: 14px;
+    margin: 15px;
+    
+}
+#remember-password {
+    color: #fff;
+}
+
+.enter {
+    margin: 15px;
+}
+
+.enter-register {
+    text-align: center;
+    
+}
+
+.a-login {
+    color: var(--colorPrimary);
+}
+
+.fa-envelope {
+    font-size: 16px;
+}
+.fas-fa-lock {
+    font-size: 22px;
+}
+
+.avatar-login a .user-icono {
+    border-radius: 50%;
+    border: 4px solid white;
+    height: 50px;
+    width: 50px;
+}
+
+.avatar-login a .user-icono:hover{
+    border: 4px solid var(--colorSecundary);
+}
+
+@media (min-width: 576px){
+    .section2-login {
+        width: 60%;
+    }
+
+    .btn-style {
+        margin: 5px 5px;
+    }
+}
+
+@media (min-width: 768px) {
+    .section2-login {
+        width: 45%;
+        margin-right: 25px;
+    }
+
+    .container-login { 
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 992px) {
+    .section2-login {
+        width: 40%;
+        height: 75%;
+        margin: 30px 45px 0 0;
+    }
+   
+}

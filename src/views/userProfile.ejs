@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head') %>
+<body>
+  <%- include('partials/header') %>
+    <main class="containerUserProfile">
+        <% if (error == true) { %>
+         
+        
+        <form action="/user/update/<%= user.id %>" method="post" id="formNewPassword">
+            <div class="cambiar-password" style="display: none; z-index: 999;">
+                <label for="">Email</label>
+            <input type="email" name="email" placeholder="Ingrese su email" >
+            <input type="text" name="password" placeholder="Contraseña antigua">
+            <% if (errors.custom) { %>
+                <small class="error"><%= errors.custom.msg %> </small>
+              <% } %>
+            <small>Nueva contraseña</small>
+            <input type="text" name="newpassword" placeholder="Ingrese su nueva contraseña" id="newpassword">
+            <input type="text" name="repeat" placeholder="Repita su nueva contraseña" id="repeat">
+            <span id="errorPass"></span>
+            <br>
+            <button id="close">X</button>
+            <button type="submit">Actualizar</button>
+        </div>
+    </form>
+    <% }else{ %>
+        <form action="/user/update/<%= user.id %>" method="post" id="formNewPassword">
+            <div class="cambiar-password" style="display: none; z-index: 999;">
+                <label for="">Email</label>
+            <input type="email" name="email" placeholder="Ingrese su email" >
+            <input type="text" name="password" placeholder="Password antigua">
+            <small>Nueva contraseña</small>
+            <input type="text" name="newpassword" placeholder="Ingrese su nueva contraseña" id="newpassword">
+            <input type="text" name="repeat" placeholder="Repita su nueva contraseña" id="repeat">
+            <span id="errorPass"></span>
+            <br>
+            <button id="close">X</button>
+            <button type="submit" id="sendNewPass">Actualizar</button>
+        </div>
+    </form>
+        <%  } %>
+    
+        <div id="datos" >
+        <h1>Mis datos</h1>
+        
+
+        <div class="imageProfile">
+            <div class="avatar">
+                <img src="/images/users/<%= user.image %> " alt="" width="150px"></div>
+            
+        </div>
+
+        <div class="data">
+            <h3>Datos de cuenta</h3>
+            <div>
+                <p>E-mail</p>
+                <p><%= user.email %></p>
+            </div>
+
+           <!--  <div>
+              <p>Cambiar Contraseña</p>
+              <p>**********</p>
+          </div> -->
+        </div>
+
+        <div class="data">
+            <h3>Datos personales</h3>
+            <div>
+                <p>Nombre :</p>
+                <p><%= user.first_name %></p>
+            </div>
+            <div>
+              <p>Apellido :</p>
+              <p><%= user.last_name %></p>
+            </div>
+            <div>
+                <p>Documento :</p>
+                <p><%= user.document %></p>
+            </div>
+            <div>
+                <p>Teléfono :</p>
+                <p><%= user.phone %></p>
+            </div>
+            <div>
+                <p>Direccion :</p>
+                <p><%= user.address %></p>
+            </div>
+            <div>
+                <p>Codigo Postal :</p>
+                <p><%= user.pc %></p>
+            </div>
+           <!--  <div>
+                <p>Contraseña</p>
+                <p>***********</p>
+            </div> -->
+            <div>
+                <p>Provincia :</p>
+                <p><%= user.province %></p>
+            </div>
+        </div>
+        <div class="containerEditPass">
+        <a href="/user/edit/<%= user.id %> " class="btnProfile">Editar perfil</a>
+        <form   action="/user/deleteUser/<%= user.id %>?_method=DELETE" method="POST" class="formDelete">
+            <button class="btnDelete"  onclick="if (!confirm('Desea eliminar su cuenta?')) { return false }" type="submit">Eliminar</button>
+        </form>
+        <!-- <div class="containerEditPass"> -->
+            <button class="btnPass"  type="submit">Editar Password</button>
+        </div>
+       
+        
+    
+    
+</div>
+    </main>
+    
+
+    <%- include('partials/footer') %>
+    <script src="/javascript/cambiar.js"></script>
+</body>
+</html>

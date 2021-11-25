@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head')%>
+<body class="body-product">
+    <%- include('partials/header')  %> 
+        <main class="main-product">
+            <%- include('partials/ul') %> 
+            <section class="cards-product">
+                <% if (results.length > 0) { %>
+                    <% results.forEach(product => { %>
+                        <article class="product-item">
+                        <div class="img-article">
+                            <img src="/images/<%- product.images_product ? product.images_product[0].name : 'default.png' %>" alt="">
+                            <!-- <img src="/images/<%= product.images_product[0]?product.images_product[0].name:'default.png' %>" alt="<%= product.modelo %> " /> --> 
+                        </div>
+                        <div class="description-product">
+                            <h4><% if(product.name.length > 19){ %>
+                                <% let nameSlice = product.name.slice(0,19) %>
+                                <%= nameSlice %>
+                            <% }else{ %> 
+                        <%= product.name %> 
+                    <% } %> </h4>
+                            <P>$<%- product.price %></P>
+                            <p>Descuento: <strong>%<%- product.discount %></strong></p>
+                            <button class="btn-product"><a href="/products/detalle/<%- product.id %>">Ver producto</a></button>
+                        </div>
+                    </article>
+                   <% }) %> 
+                <% } else { %>
+                    <div><h1 class="title-results">No se encontraron resultados de la busqueda</h1></div>
+                <% } %> 
+            </section>
+        </main>
+        <%- include('partials/footer')  %> 
+    </body>
+    </html>

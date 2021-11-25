@@ -1,0 +1,25 @@
+
+    <div class="carrusel" id="oferta">
+      <div class="carrusel-items">
+        <% products.forEach(product => { %>
+            <a href="/products/detalle/<%- product.id %>">
+        <div class="carrusel-item">
+            <div class="sliderbox">
+                <div class="imagenBox">
+                    <img src="/images/<%- product.images_product ? product.images_product[0].name : 'default.png' %>">
+                </div>
+                <p><% if(product.name.length > 19){ %>
+                    <% let nameSlice = product.name.slice(0,19) %>
+                    <%= nameSlice %>
+                <% }else{ %> 
+            <%= product.name %> 
+        <% } %> </p>
+                <p class="price"> $ <%= product.price %> </p>
+                <div class="cart">
+                   Ver producto</a>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>

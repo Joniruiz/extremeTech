@@ -1,0 +1,252 @@
+
+
+/*modal */
+
+.modalCart {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: all 500ms ease;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 0 3px 3px var(--colorSecundary);
+  background-color: white;
+  padding-bottom: 20px;
+  z-index: 999;
+}
+
+#btn-modalCart:checked ~ .modalCart {
+  opacity: 1;
+  visibility: visible;
+}
+
+.containerCart {
+  background-color: #fff;
+  transition: all 500ms ease;
+  position: relative;
+  transform: translateX(130%);
+}
+
+#btn-modalCart:checked ~ .modalCart .containerCart {
+  transform: translateX(0%);
+}
+
+.containerCart label {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  height: 19px;
+  width: 19px;
+  cursor: pointer;
+  caret-color: transparent;
+  border-radius: 50%;
+}
+
+.containerCart label .cruz {
+  font-size: 20px;
+  color: #fff;
+  margin-left: 2.5px;
+}
+
+#btn-modalCart {
+  display: none;
+}
+
+.lbl-modalCart {
+  text-align: center;
+  cursor: pointer;
+  caret-color: transparent;
+}
+
+.lbl-modalCart i {
+  font-size: 30px;
+  margin: 5px 12px;
+}
+
+/*modal*/
+
+.containerCart .titleCart {
+  padding: 15px;
+  background-color: var(--colorPrimary);
+  color: white;
+  font-size: 17px;
+  border-bottom: solid 4px var(--colorSecundary);
+}
+
+.containerCart .containerProduct h4 {
+  width: 100%;
+  margin-left: 10px;
+  color: #4e5b67;
+}
+
+.containerCart .containerProduct .productCardCart {
+  margin: 3px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+  box-shadow: 2px 2px 2px 1px rgba(8, 6, 6, 0.2);
+  height: 80px;
+}
+
+.containerCart .containerProduct .productCardCart img {
+  width: 75px;
+}
+
+.containerCart .containerProduct .productCardCart .description {
+  width: 45%;
+  padding: 10px 5px;
+}
+
+.containerCart .containerProduct .productCardCart .description .nameProduct {
+  font-size: 13px;
+  font-weight: bold;
+  color: black;
+}
+
+.containerCart .containerProduct .productCardCart .description input {
+  width: 30px;
+  text-align: center;
+}
+
+.containerCart .containerProduct .productCardCart .price {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.containerCart .containerProduct .productCardCart .price .trash {
+  position: absolute;
+  top: 12px;
+  right: 0px;
+  font-size: 18px;
+  color: var(--colorSecundary);
+  margin: 0;
+}
+
+.containerCart .containerProduct .productCardCart .price p {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 17px;
+  color: var(--colorPrimary);
+}
+
+.containerCart .containerProduct .subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 21px 35px;
+  font-size: 16px;
+  color: var(--colorPrimary);
+}
+.containerCart .containerProduct .total {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 21px 35px;
+  font-size: 20px;
+  color: var(--colorPrimary);
+}
+
+.containerCart .containerProduct .subtotal p span,
+.containerCart .containerProduct .total p span {
+  color: var(--colorPrimary);
+}
+
+.containerCart .containerProduct .total {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.containerCart .containerProduct .buy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerCart .containerProduct .buy a .moreProducts {
+  background-color: var(--colorPrimary);
+  border: 1px solid transparent;
+  border-bottom: 2px solid var(--colorPrimaryC);
+  color: #fff;
+  float: none;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  outline: none;
+  padding: .5em;
+  justify-content: center;
+  align-items: center;
+  }
+.containerCart .containerProduct .buy .buttonBuy {
+    background-color: var(--colorPrimary);
+    border: 1px solid transparent;
+    border-bottom: 2px solid var(--colorPrimaryC);
+    color: #fff;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    outline: none;
+    padding: .5em;
+   
+}
+.containerCart .containerProduct .buy .buttonBuy:hover,
+.containerCart .containerProduct .buy a .moreProducts:hover {
+  background-color: var(--colorPrimaryC);
+}
+
+
+
+@media (min-width: 576px) {
+  /*Tablet*/
+  .modalCart {
+    width: 75%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+  }
+
+  .containerCart .containerProduct .buy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+
+  .lbl-modalCart i {
+    font-size: 30px;
+    margin: 0px 12px;
+  }
+}
+
+@media (min-width: 992px) {
+  /*desktop*/
+  .containerCart .containerProduct .subtotal,
+  .containerCart .containerProduct .total {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 21px 35px;
+    width: 80%;
+  }
+
+  .containerCart .containerProduct .buy {
+    width: 85%;
+  }
+
+  .containerCart .containerProduct .productCardCart {
+    width: 85%;
+  }
+  .containerCart .containerProduct .buy a .moreProducts {
+     width: 190px;
+     display: flex;
+      
+    }
+}

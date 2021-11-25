@@ -1,0 +1,47 @@
+<header class="headerAdmin">
+  <div class="containerLogoAdmin">
+      <a href="/"><img class="logoAdmin" src="/images/logoSinFondo.png" alt=""></a>
+ </div>
+
+  <div class="menuBurgerAdmin">
+    <input type="checkbox" name="burger" id="btn-modal">
+    <label for="btn-modal" class="lbl-modal"><i class="fa fa-bars"></i></label>
+    
+    <div class="modalBurgerAdmin">
+        <div class="contenedorBurgerAdmin">
+            <label for="btn-modal"><i class="fa fa-times cruz"></i></label>
+            <h2>Admin - Extreme Tech</h2>
+            <div class="contenidoBurgerAdmin">
+                <ul>
+                  <a href="/admin/agregarProducto"><li>Agregar producto</li></a>
+                  <a href="/admin/agregarMarca"><li>Agregar marca</li></a>
+                  <a href="/admin/marca"><li>Lista de marcas</li></a>
+                  <a href="/admin/index"><li>Lista de productos</li></a>
+                  <a href="/admin/users"><li>Lista de usuarios</li></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <nav class="navAdmin">
+    <ul>
+      <a href="/admin/agregarProducto"><li>Agregar producto</li></a>
+      <a href="/admin/agregarMarca"><li>Agregar marca</li></a>
+      <a href="/admin/marca"><li>Lista de marcas</li></a>
+      <a href="/admin/index"><li>Lista de productos</li></a>
+      <a href="/admin/users"><li>Lista de usuarios</li></a>
+    </ul>
+  </nav>
+
+  <div class="userAdmin">
+    
+    <% if (session.rol == 1) { %>
+      <a href="/user"> <img class= "user-icono"src="/images/users/<%=session.avatar %>" alt="" width="50px"> </a>
+      <a class="logout-header" href="/user/logout">Cerrar Sesion</a>
+     <% }else{ %>
+    
+      <a href="/user/login"> <img class="user-icono"src="/images/iconousuario.svg" alt="" width="50px"> </a>
+      <% }  %> 
+  </div>
+</header>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %> 
+  <body>
+    
+    <%- include('partials/header-admin') %> 
+
+    <div class="containerEdit">
+      <div class="titleSearch">
+        <h1>Editar o eliminar marca</h1>
+       
+        <form class="search-container-admin" action="/admin/search3" method="GET">
+          <input type="search" class="searchAdmin" name="search" id="" placeholder="Buscar marca"/>
+          <button class="buttonSearchAdmin" type="submit"> <i class="fas fa-search"></i></button>
+        </form>
+        
+      </div>
+      <% brands.forEach(brand => { %>
+       
+      <div class="cardProduct">
+       
+
+        <div class="description">
+          <p>Marca: <%= brand.name%></p>
+          
+        </div>
+
+        <div class="containerBtns">
+          
+          <form   action="/admin/deleteBrand/<%= brand.id %>?_method=DELETE" method="POST">
+            <button onclick="if (!confirm('Desea eliminar la marca: <%= brand.name %> ?')) { return false }" type="submit">Eliminar</button>
+          </form>
+          
+        </div>
+      </div>
+      <% }) %>
+      
+    </div>
+    <script src='/javascript/validadorEliminaciones.js'></script>
+  </body>
+</html>

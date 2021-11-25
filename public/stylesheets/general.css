@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --colorPrimary: #252a2b;
+    --colorPrimaryC: #264d55;
+    --colorSecundary: #44b8fc;
+    --colorSecundaryWhite: #2194d6;
+    --colorTertiary: #222831;
+    --colorCuart: #E8E8E8;
+    --colorWhite: #fff;
+    --colorGreen: #236d6159;
+    --colorGreenC: #bbe7e0;
+}
+
+.error {
+    color: red;
+    display: block;
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+  <html lang="es">
+    <%- include('partials/head') %> 
+  <body>
+    <%- include('partials/header') %> 
+    
+    <main class="main-content">
+      <!-- CARROUSEL -->
+      <div class="containerCarrouselHome maxwidth">
+        <!-- comienzo imagenes slider -->
+        <div class="slider" id="slider">
+          <div class="sliderSection">
+              <img src="../../images/images-home/img-home/frame_3.png" alt="" class="sliderImg" />
+          </div>
+          <div class="sliderSection">
+              <img src="../../images/images-home/img-home/frame_4.png " alt="" class="sliderImg" />
+          </div>
+          <div class="sliderSection">
+              <img src="../../images/images-home/img-home/frame_5.png" alt="" class="sliderImg" />
+          </div>
+          <div class="sliderSection">
+              <img src="../../images/images-home/img-home/frame_6.png" alt="" class="sliderImg" />
+          </div>
+        </div>
+        <!-- fin imagenes slider -->
+        <!-- botones slider -->
+          <div class="sliderBtn btnDer" id="btnDer"> > </div>
+          <div class="sliderBtn btnIzq" id="btnIzq"> < </div>
+        <!-- botones slider -->
+      </div>
+      <a class="logoWsp" href="https://api.whatsapp.com/send?phone=1111111111" target="_blank"> Hace tu consulta
+        <img class="imgWsp" src="https://cliply.co/wp-content/uploads/2021/08/372108180_WHATSAPP_ICON_400.gif"  alt="logo wsp">
+      </a>
+      
+<div class="maxwidth">
+    <!-- pc recommended -->
+    <div class="pc-recommended">
+      <h2>Pc Recomendadas</h2>
+    </div>
+    <!-- products and images -->
+    <section>
+      
+      <% pcsArmadas.forEach(product => { %>
+        
+        <a href="/products/detalle/<%= product.id %> ">
+        <article>
+          <div class="img-product-main">
+            <img src="/images/<%- product.images_product ? product.images_product[0].name : 'default.png' %>" width="300px" height="200px" alt="">
+            <p><%= product.name %></p>
+            <p>$<%= product.price %> </p>
+            <p>Descuento: <%= product.discount %> </p>
+            <h3>Ver Producto</h3>
+          </div>
+        </article> 
+      </a>
+      <% }) %>
+        
+     
+    </section>
+    <!-- img icons main -->
+    <hr class="separador">
+
+    <div class="pc-recommended">
+      <h2>TIPOS DE PRODUCTOS</h2>
+    </div>
+    <section>
+      <article>
+        <a href="/products/1">
+        <div class="img-product-main">
+          <img class="img-product-main" src="/images/homeauriculares.svg" alt="">
+          <p class="parrafo-products">AURICULARES</p>
+        </div>
+      </a>
+      </article>
+      <article>
+        <a href="/products/13">
+          <div class="img-product-main">
+          <img src="/images/homemonitor.svg" alt="" >
+          <a href="/products/monitores"><p class="parrafo-products">MONITORES</p>
+        </div>
+      </a>
+      </article>
+      <article>
+        <a href="/products/14">
+        <div class="img-product-main">
+          <img src="/images/homenotebook.svg" alt="" >
+          <p class="parrafo-products">NOTEBOOKS</p>
+        </div>
+      </a>
+      </article>
+      <article>
+        <a href="/products/1">
+        <div class="img-product-main">
+          <img src="/images/homejoystick.svg" alt="" >
+          <p class="parrafo-products">JOYSTICK</p>
+        </div>
+      </a>
+      </article>
+    </section>
+    
+    <!-- carrousel products -->
+    <div class="productos-recomendados" id="Ofertas">
+    </div>
+    <%- include('partials/carousel') %> 
+    <div class="container-img-logitech-background">
+      <img class="img-banner-logitech-back" src="/images/about-us/5.jpg" alt="">
+  </div>
+</div>
+<div class="rgba"></div>
+  <%- include('partials/footer') %> 
+</main>
+<!-- carrousel-products-main -->
+<script src="javascript/carrousel-products-main.js"></script>
+<!-- app.js -->
+<script src="javascript/app.js"></script>
+<!-- carrousel principal home -->
+<script src="../../javascript/carrouselPrincipalHome.js"></script>
+<script src="/javascript/carousel.js" defer></script>
+</body>
+</html>
+

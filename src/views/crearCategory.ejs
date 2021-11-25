@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head') %> 
+</head>
+<body>
+    <%- include('partials/header-admin') %> 
+    <main class="main-carga-productos-panel">
+        <h2 class="carga-productos-panel-adm">Crear marca</h2>
+            <h4 class="nuevo-producto-panel-adm">Nueva marca </h4>
+                <form action="/admin/agregarMarca" method="POST">
+                        <input type="text" name="categoria">
+                   
+                        
+                        <div id="submit-fn">
+                            <button type="submit" id="btn-submit-finalizar-edit">Agregar</button>
+                        </div>
+            </form>
+                </main>
+            </body>
+            </html>

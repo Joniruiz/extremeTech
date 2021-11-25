@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %> 
+  <body>
+    
+    <%- include('partials/header-admin') %> 
+
+    <div class="containerEdit">
+      <div class="titleSearch">
+        <h1>Editar o eliminar usuario</h1>
+        
+          <form class="search-container-admin" action="/admin/search" method="GET">
+            <input type="search" class="searchAdmin" name="search" id="" placeholder="Buscar usuarios"/>
+            <button class="buttonSearchAdmin" type="submit"> <i class="fas fa-search"></i></button>
+          </form>
+        
+      </div>
+      <% users.forEach(user => { %>
+       
+      <div class="cardProduct">
+        <div class="image">
+          <img src="/images/users/<%= user.image%> " alt=""/>
+        </div>
+
+        <div class="description">
+          <p>Nombre: <%= user.first_name%></p>
+          <p>Apellido : <%= user.last_name %></p>
+          <p>email: <%= user.email.slice(0,20) %> </p>
+          <% if (user.rol_user == 0) { %>
+            <p>Admin : No</p>
+          <% }else{%>
+             <p>Admin : si</p>
+             <% } %>
+         
+        </div>
+
+        <div class="containerBtns">
+          <a href="/admin/user/<%= user.id %> ">Editar</a>
+          <form action="/admin/deleteUser/<%= user.id %>?_method=DELETE" method="POST">
+            <button onclick="if (!confirm('Desea eliminar el usuario: <%= user.email %> ?')) { return false }" type="submit">Eliminar</button>
+          </form>
+         
+        </div>
+      </div>
+        <% }) %>
+      
+    </div>
+  </body>
+</html>
